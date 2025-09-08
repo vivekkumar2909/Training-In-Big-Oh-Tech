@@ -3,11 +3,11 @@ public class Main {
     public static void main(String[] args) {
         PCU pcu = new PCU(10, 230);
         GTI gti = new GTI(12, 230);
-        Regalia regalia = new Regalia(15, 230,false,false);
-        Regalia regalia1 = new Regalia(15, 230,true,true);
+        // Regalia regalia = new Regalia(15, 230,false,false);
+        // Regalia regalia1 = new Regalia(15, 230,true,true);
         // Regalia regalia1 = new Regalia(15, 230,true,true);
         Regalia regalia2 = new Regalia(15, 230,false,true);
-        Regalia regalia3 = new Regalia(15, 230,true,false);
+        // Regalia regalia3 = new Regalia(15, 230,true,false);
         HomeInverter Icruze = new HomeInverter("iCruze", 8, 230);
         HomeInverter zelio = new HomeInverter("Zelio", 10, 240);
 
@@ -24,15 +24,15 @@ public class Main {
 
         System.out.println();
 
-        regalia.displayDetails();
-        regalia.chargeBattery();
-        regalia.sellToGrid();
+        // regalia.displayDetails();
+        // regalia.chargeBattery();
+        // regalia.sellToGrid();
 
         System.out.println();
 
-        regalia1.displayDetails();
-        regalia1.chargeBattery();
-        regalia1.sellToGrid();
+        // regalia1.displayDetails();
+        // regalia1.chargeBattery();
+        // regalia1.sellToGrid();
 
 
         System.out.println();
@@ -44,9 +44,9 @@ public class Main {
 
         System.out.println();
 
-        regalia3.displayDetails();
-        regalia3.chargeBattery();
-        regalia3.sellToGrid();
+        // regalia3.displayDetails();
+        // regalia3.chargeBattery();
+        // regalia3.sellToGrid();
 
         System.out.println("\n=== Non-Solar Inverter ===");
         Icruze.displayDetails();
