@@ -1,29 +1,25 @@
 // SolarInverter.java
 public abstract class SolarInverter extends Inverter implements SolarFeatures {
-    protected boolean hasBattery;
-    protected boolean gridOn;
 
-    public SolarInverter(String name, double current, double voltage, boolean hasBattery, boolean gridOn) {
+    protected Battery battery;
+    protected Grid grid;
+
+    public SolarInverter(String name, double current, double voltage, Battery battery, Grid grid) {
         super(name, current, voltage);
-        this.hasBattery = hasBattery;
-        this.gridOn = gridOn;
+        this.battery = battery;
+        this.grid = grid;
     }
 
     @Override
     public void chargeBattery() {
-        if (hasBattery) {
-            System.out.println(name + ": Charging battery with solar energy.");
-        } else {
-            System.out.println(name + ": No battery to charge.");
-        }
+
+        battery.charge(this.name, true);
+
+        System.out.println(this.name + " is now running");
     }
 
     @Override
     public void sellToGrid() {
-        if (gridOn) {
-            System.out.println(name + ": Selling extra energy to grid.");
-        } else {
-            System.out.println(name + ": GRID feature not available.");
-        }
+        grid.sellPower(name);
     }
 }

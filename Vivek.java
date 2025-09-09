@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 class Vivek {
     public static void main(String[] args) {
@@ -25,8 +26,23 @@ class Vivek {
 
         Commissioner commissioner = new Commissioner("Vivek Kumar");
 
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Do you want to arrest the MP (true/false)? ");
+        boolean flag = sc.nextBoolean();
+
+        System.out.println(flag);
+
         commissioner.canArrest(mp1, pm);
+
+        System.out.print("Do you want to arrest the MINISTER (true/false)? ");
+        flag = sc.nextBoolean();
+
         commissioner.canArrest(minister1, pm);
+
+        // System.out.print("Do you want to arrest the MP (true/false)? ");
+        // flag = sc.nextBoolean();
+
         commissioner.canArrest(pm, pm);
 
     }
