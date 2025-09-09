@@ -20,6 +20,7 @@ class Vivek {
 
         Commissioner commissioner = new Commissioner("Vivek Kumar");
 
+        
         commissioner.canArrest(mp1, pm);
         commissioner.canArrest(minister1, pm);
         commissioner.canArrest(pm, pm);
