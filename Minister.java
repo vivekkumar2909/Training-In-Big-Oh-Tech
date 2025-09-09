@@ -1,16 +1,16 @@
 
 public class Minister extends MP {
 
-    //constructor for minister
-    public Minister(String name, String constituency, String driver,double spendLimit) {
-        super(name, constituency, driver,spendLimit);
+    // constructor for minister
+    public Minister(String name, String constituency, String driver, double spendLimit, boolean isPolitician) {
+        super(name, constituency, driver, spendLimit, isPolitician);
     }
 
     @Override
     public boolean getLimitExpend() {
 
         // i have used the politician expense logic
-        return super.getLimitExpend(); 
+        return super.getLimitExpend();
     }
 
     @Override

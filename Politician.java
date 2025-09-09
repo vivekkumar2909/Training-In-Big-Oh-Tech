@@ -1,30 +1,22 @@
 
-
 //Abstract class to hide implement of the internal method;
 
-abstract class Politician {
-    private String name;
-    private String Constituency;
+abstract class Politician extends Person {
+    // private String name;
+    // private String Constituency;
     private double expense;
     private double spendLimit;
 
-    public Politician(String name, String Constituency, double spendLimit) {
+    public Politician(String name, String Constituency, double spendLimit, boolean isPolitician) {
+        super(name, Constituency, isPolitician);
         this.expense = 0.0;
-        this.Constituency = Constituency;
-        this.name = name;
+        // this.Constituency = Constituency;
+        // this.name = name;
         this.spendLimit = spendLimit;
+
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public String getConstituency() {
-        return this.Constituency;
-    }
-    
-    public boolean getLimitExpend()
-    {
+    public boolean getLimitExpend() {
         return this.expense > this.spendLimit;
     }
 
