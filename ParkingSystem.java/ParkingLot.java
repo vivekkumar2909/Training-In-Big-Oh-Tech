@@ -1,7 +1,7 @@
 import java.util.*;
-// import java.time.*;
 
 public class ParkingLot {
+
     private final String name;
     private final Map<Integer, ParkingFloor> floors = new HashMap<>();
     private final CalculatePriceBasedOnHour pricing;
@@ -13,14 +13,18 @@ public class ParkingLot {
         this.processor = processor;
     }
 
+    // here a floor for More Parking
     public void addFloor(int num) {
         floors.put(num, new ParkingFloor(num));
     }
+
+    // In map store the type of parking with floor as a key
 
     public void addSpot(int floorNum, String id, String type) {
         floors.get(floorNum).addSpots(new ParkingSpot(id, type));
     }
 
+    // Getting the floor number by ParkingFloor
     public ParkingFloor getFloor(int num) {
         return floors.get(num);
     }
@@ -31,14 +35,17 @@ public class ParkingLot {
     }
 
     public void processPayment(double amount, String method) {
+
+        // Here its the Payment Processor Method to find the Amount
         processor.DoTransaction(amount, method);
     }
 
+    // Showing the All Available space
     public void showAvailableSpots() {
-        System.out.println("\n--- Available Spots ---");
+        System.out.println("\n    Available Spots    ");
         for (ParkingFloor f : floors.values()) {
             f.showFreeSpots();
         }
-        System.out.println("-----------------------\n");
+        System.out.println("************#***************\n");
     }
 }

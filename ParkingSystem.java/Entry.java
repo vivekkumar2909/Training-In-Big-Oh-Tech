@@ -17,11 +17,11 @@ public class Entry {
             if (spot != null) {
                 spot.park(v);
                 Ticket t = new Ticket(UUID.randomUUID().toString(), v);
-                System.out.println("[Entry " + id + "] Spot " + spot.getNo() + " assigned");
+                System.out.println("Entry Time of id : " + id + " Spot : " + spot.getNo() + " is assigned");
                 return t;
             }
         }
-        System.out.println("[Entry " + id + "] No spot available");
+        System.out.println("Entry with " + id + "  No spot available");
         return null;
     }
 }

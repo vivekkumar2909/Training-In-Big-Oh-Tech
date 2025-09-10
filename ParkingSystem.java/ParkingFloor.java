@@ -9,9 +9,12 @@ public class ParkingFloor {
         this.numbers = numbers;
     }
 
+    // Add vehicle to given spot
     public void addSpots(ParkingSpot spot) {
         spots.add(spot);
     }
+
+    // this help is finding if the space is available or not
 
     public ParkingSpot FindSpot(Vehicle veh) {
         for (ParkingSpot s : spots) {
@@ -23,11 +26,12 @@ public class ParkingFloor {
         return null;
     }
 
+    // this show all free spot
     public void showFreeSpots() {
-        System.out.println("Floor " + numbers + " free spots:");
+        System.out.println("Floor " + numbers + " is free spots : ");
         for (ParkingSpot s : spots) {
             if (s.isFreeSpot()) {
-                System.out.println(" - * - " + s.getNo() + " (" + s.getTypeOfVehicle() + ") " + " - * - ");
+                System.out.println("Number : " + s.getNo() + " " + s.getTypeOfVehicle() + " " + "is available");
             }
         }
     }

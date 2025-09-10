@@ -29,9 +29,9 @@ class Exit {
         double fee = lot.calculateFee(t);
         lot.processPayment(fee, method);
 
-        t.markIsPaid(); // ✅ should mark paid, not just check isPaid()
+        t.markIsPaid();
 
-        System.out.println("[Exit " + id + "] Vehicle " +
+        System.out.println("Exit of : " + id + " Vehicle " +
                 t.getVehicle().getNumber() +
                 " paid " + fee);
     }

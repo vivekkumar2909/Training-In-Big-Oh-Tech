@@ -1,4 +1,4 @@
-public class Main {
+public class Vivek {
     public static void main(String[] args) throws InterruptedException {
 
         CalculatePriceBasedOnHour pricing = new CalculatePriceBasedOnHour();
@@ -13,24 +13,37 @@ public class Main {
         for (int i = 1; i <= 3; i++) {
             lot.addSpot(1, "E" + i, "ELECTRIC");
         }
-        lot.addSpot(1, "L1", "LARGE");
-        lot.addSpot(1, "H1", "HANDICAPPED");
 
-        Entry entry = new Entry(lot, "Entry-A");
+        for (int i = 1; i <= 3; i++) {
+            lot.addSpot(1, "L" + i, "LARGE");
+            lot.addSpot(1, "H" + i, "HANDICAPPED");
+        }
+        for (int i = 1; i <= 3; i++) {
+
+            lot.addSpot(1, "S" + i, "SMALL");
+        }
+
+        Entry entry = new Entry(lot, "Entry-1");
         Exit exit = new Exit(lot, "Exit-1");
 
         lot.showAvailableSpots();
 
-        Ticket t1 = entry.takeTicket(new Vehicle("CAR", "KA-01-111"));
-        Ticket t2 = entry.takeTicket(new Vehicle("CAR", "KA-01-222"));
+        Ticket t1 = entry.takeTicket(new Vehicle("CAR", "UP-16-2787"));
+        Ticket t2 = entry.takeTicket(new Vehicle("CAR", "HR-01-2389"));
+        Ticket t3 = entry.takeTicket(new Vehicle("TRUCK", "JH-03-1235"));
+        Ticket t4 = entry.takeTicket(new Vehicle("MOTORCYCLES", "HR-02-2345"));
 
         lot.showAvailableSpots();
 
-        Thread.sleep(1000);
+        // Thread.sleep(1000);
 
         exit.scanAndPay(t1, "CASH");
         exit.scanAndPay(t2, "CARD");
 
+        exit.scanAndPay(t3, "CASH");
+        exit.scanAndPay(t4, "CARD");
+
         lot.showAvailableSpots();
+
     }
 }
