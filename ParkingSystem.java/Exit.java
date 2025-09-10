@@ -1,0 +1,38 @@
+
+// class Exit {
+//     private final ParkingLot lot;
+//     private final String id;
+
+//     public Exit(ParkingLot lot, String id) {
+//         this.lot = lot;
+//         this.id = id;
+//     }
+
+//     public void scanAndPay(Ticket t, String method) {
+//         double fee = lot.calculateFee(t);
+//         lot.processPayment(fee, method);
+//         t.isPaid();
+//         System.out.println(" "+ id  + " " + t.getVehicle().getNumber());
+//     }
+// }
+
+class Exit {
+    private final ParkingLot lot;
+    private final String id;
+
+    public Exit(ParkingLot lot, String id) {
+        this.lot = lot;
+        this.id = id;
+    }
+
+    public void scanAndPay(Ticket t, String method) {
+        double fee = lot.calculateFee(t);
+        lot.processPayment(fee, method);
+
+        t.markIsPaid(); // ✅ should mark paid, not just check isPaid()
+
+        System.out.println("[Exit " + id + "] Vehicle " +
+                t.getVehicle().getNumber() +
+                " paid " + fee);
+    }
+}
