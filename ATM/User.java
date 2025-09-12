@@ -23,7 +23,7 @@ public class User {
     }
 
     void setCurrentBalance(int amount) {
-        this.currentBalance = amount;
+        this.currentBalance += amount;
     }
 
 }

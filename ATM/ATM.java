@@ -34,7 +34,14 @@ public class ATM {
         Map<Integer, Integer> dispensed = new TreeMap<>((a, b) -> b - a);
         int remaining = amount;
 
-        for (int denom : new int[] { 2000, 500, 200, 100 }) {
+        // Integer[] keysArray = NoteAvailable.keySet().toArray(new Integer[0]);
+
+        // OR if you want primitive int[]
+        int[] keysOfNote = NoteAvailable.keySet().stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+        // new int[] { 2000, 500, 200, 100 }
+        for (int denom : keysOfNote) {
             if (remaining == 0)
                 break;
             Notes notes = NoteAvailable.get(denom);

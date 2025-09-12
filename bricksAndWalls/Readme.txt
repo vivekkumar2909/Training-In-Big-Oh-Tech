@@ -18,3 +18,4 @@ An owner can dedicate more than one brick to express his/ her love to more than 
 Find out hottest guy or girl that received max number of bricks.
 Find out the guy or girl that don't get any dedication.
 You can input 10 users from command line. Whole project should be able to run through command line.
+

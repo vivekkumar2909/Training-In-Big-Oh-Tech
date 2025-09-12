@@ -1,18 +1,22 @@
-package bricksAndWalls;
+// package bricksAndWalls;
 
 import java.util.*;
 
 public class User {
     // private String UserId;
     private String name;
+    private int userId;
     // private boolean isAdmin;
 
     private int receiptName = 0;
 
     private List<Bricks> ownBrick = new ArrayList<>();
 
-    User(String name) {
+    User(String name, int userId) {
         this.name = name;
+        this.userId = userId;
+
+        System.out.println("User added successfully " + this.name + " " + this.userId);
     }
 
     void incrementReceiptName() {

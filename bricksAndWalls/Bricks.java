@@ -1,11 +1,10 @@
-package bricksAndWalls;
+// package bricksAndWalls;
 
 import java.util.*;
 
 public class Bricks {
 
     private String bricksId;
-    private int idCounter = 1;
     private String caption;
     private String message;
     private User ownerOfBrick;
@@ -16,7 +15,6 @@ public class Bricks {
 
     Bricks(String bricksId, String caption, User owner, User Dedicate) {
         this.bricksId = bricksId;
-        this.idCounter = idCounter++;
         this.caption = caption;
         this.ownerOfBrick = owner;
         this.dedicateToUser = Dedicate;
@@ -29,7 +27,7 @@ public class Bricks {
 
     // setter to increase count
     void addIncreaseCount() {
-        this.flagCount = flagCount++;
+        this.flagCount++;
         if (flagCount > 10) {
             isVisible = false;
         }
@@ -54,6 +52,10 @@ public class Bricks {
 
     String getCaption() {
         return this.caption;
+    }
+
+    void setCaption(String caption) {
+        this.caption = caption;
     }
 
     public String getMessage() {

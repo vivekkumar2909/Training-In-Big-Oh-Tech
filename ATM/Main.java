@@ -44,9 +44,11 @@ public class Main {
                     int note = sc.nextInt();
 
                     System.out.print("Enter number of Amount to deposit : ");
-                    int count = sc.nextInt();
+                    int amount = sc.nextInt();
 
-                    atm.topUp(note, count);
+                    atm.topUp(note, amount);
+
+                    user.setCurrentBalance(amount);
 
                     System.out.println("Your amount Deposit SuccessFully ");
 
